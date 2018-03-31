@@ -1,0 +1,19 @@
+.list-control{
+  width: 300px;
+}
+
+.mdl-checkbox{
+  padding-right: 1rem;
+}
+
+main{
+  padding-left: 80px;
+  padding-top: 1rem;
+}
+
+
+@media screen and (max-width: 1024px){
+main{
+    padding-left: 72px;
+  }
+}
