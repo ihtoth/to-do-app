@@ -1,11 +1,18 @@
 .list-control{
-  width: 300px;
+  width: 500px;
 }
 
-.mdl-checkbox{
-  padding-right: 1rem;
+.liText{
+  width: 75%;
 }
 
+.mdl-checkbox__input{
+  margin-right: 1rem;
+}
+
+.mdl-textfield{
+  width: 400px;
+}
 main{
   padding-left: 80px;
   padding-top: 1rem;
