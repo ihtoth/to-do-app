@@ -68,7 +68,7 @@ function onReady(){
         newLi.appendChild(deleteButton);
         toDoList.appendChild(newLi);
 
-
+        componentHandler.upgradeDom();
     });
 
   }

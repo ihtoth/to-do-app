@@ -13,6 +13,7 @@
 .mdl-textfield{
   width: 400px;
 }
+
 main{
   padding-left: 80px;
   padding-top: 1rem;
@@ -22,5 +23,20 @@ main{
 @media screen and (max-width: 1024px){
 main{
     padding-left: 72px;
+  }
+
+}
+@media screen and (max-width:585px){
+.list-control{
+    width: 100%;
+  }
+.mdl-textfield{
+    width: 72%;
+  }
+main{
+    padding-left: 2rem;
+  }
+.mdl-list__item{
+    padding-left: 0;
   }
 }
