@@ -62,33 +62,24 @@ function onReady(){
   });
 
 
-  //does allCheckboxes update every time there's a removal of an li?
-  const allCheckboxes = document.getElementsByClassName("mdl-checkbox__input");
-
   removeLiFromList.addEventListener('click',() => {
+    //does allCheckboxes update every time there's a removal of an li? YES.
+    const allCheckboxes = document.getElementsByClassName("mdl-checkbox__input");
+    //pick only checked checkboxes
+    let checkedCheckboxes = Array.from(allCheckboxes).filter(c => c.checked);
 
-    //let checkedCheckboxes = allCheckboxes.filter(c => c > 1); //Why does this not work?
-
-    let liNumList = [];
-    //find which checkboxes are checked.
-    for (let i = 0; i<allCheckboxes.length; i++){
-      let currentID = allCheckboxes[i].id;
-
-      if(allCheckboxes[i].checked){
-        console.log(currentID.slice(currentID.lastIndexOf('-')+1));
-        liNumList.push(currentID.slice(currentID.lastIndexOf('-')+1));
-        }
-    }
-    //remove checked list elements
-    for(let i = 0; i<liNumList.length; i++){
-      removeLi(`list-item-${liNumList[i]}`);
+    //remove all checked checkboxes, decrement number of li's
+    for(let i = 0; i<checkedCheckboxes.length; i++){
+      removeLi(`list-item-${checkedCheckboxes[i].id.slice(checkedCheckboxes[i].id.lastIndexOf('-')+1)}`);//`list-item-${liNumList[i]}`);
       numLi--;
     }
-    //change remove button's appearance back to disabled.
+
+    //change remove button's appearance back to disabled when there are no more items.
     if (numLi == 0){
       removeLiFromList.classList.remove("mdl-button--color");
       removeLiFromList.classList.add("mdl-button--disabled");
     }
+
   });
 }
 
